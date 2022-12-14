@@ -1,0 +1,33 @@
+<table class="table tableposition">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">FrontPlate</th>
+      <th scope="col">RearPlate</th>
+      <th scope="col">carId</th>
+      
+  
+    </tr>
+  </thead>
+    <tr *ngFor="let user of Platedata;let i=index">
+      <td>{{ user.id}}</td>
+      <td>{{ user.frontPlate}}</td>
+      <td>{{ user.rearPlate}}</td>
+      <td>{{ user.carId}}</td>
+
+      <!--siko siko-->
+      <td><button mat-icon-button [matMenuTriggerFor]="mainMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #mainMenu="matMenu">
+        <button mat-menu-item (click)="onDeleteplate(user.id)" >delete</button>
+        <button mat-menu-item  >Edit</button>
+  
+      </mat-menu>
+      </td>
+    </tr>
+</table>
+<button class="btn btn-primary buttonposition" (click)="addPlate()" >Add New Plate</button>
+
+
+

@@ -1,0 +1,31 @@
+<table class="table tableposition">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">insuranceNumber</th>
+      <th scope="col">insuranceName</th>
+      <th scope="col">insuranceDate</th>
+      <th scope="col">insuranceAmount</th>
+      <th scope="col">isValid</th>
+      <th scope="col">CarId</th>
+    </tr>
+  </thead>
+    <tr *ngFor="let user of Insurancedata;let i=index">
+      <td>{{ user.insuranceNumber}}</td>
+      <td>{{ user.insuranceName}}</td>
+      <td>{{ user.insuranceDate}}</td>
+      <td>{{ user.insuranceAmount}}</td>
+      <td>{{ user.isValid}}</td>
+      <td>{{ user.carId}}</td>
+      
+      <!--siko siko-->
+      <td><button mat-icon-button [matMenuTriggerFor]="mainMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #mainMenu="matMenu">
+        <button mat-menu-item  >delete</button>
+        <button mat-menu-item  >Edit</button>
+  
+      </mat-menu>
+      </td>
+    </tr>
+  </table>

@@ -68,6 +68,13 @@ getById(id:number){
 
 console.log(this.getcar);
 }
+PlateForm(){
+  this.router.navigate(['/Plateform'])
+}
+InsuranceForm(){
+  this.router.navigate(['/InsuranceForm'])
+
+}
 
 
 

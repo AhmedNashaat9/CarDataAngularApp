@@ -13,6 +13,8 @@ export class CarDataService {
   private  API = environment.apiUrl;
   private getCars = '/Car/list';
   private deleteCars = '/Car/';
+  private getCarsById = '/Car/';
+
   private addCars = '/Car';
 
   constructor(private http:HttpClient) { 
@@ -26,10 +28,14 @@ export class CarDataService {
 
   }
   updatecar(id:number,value:any){
-    return this.http.put(this.API + this.deleteCars+id,value).subscribe();
-
+     return this.http.put(this.API + this.deleteCars+id,value).subscribe();
+  }
+  AddCar(car : {name:string,type:string,price:number,color:string}){
+    return this.http.post(this.API+this.addCars,car)
+  }
+  getByID(id:number){
+    return this.http.get(this.API + this.getCarsById+id)
 
   }
-  
 
 }

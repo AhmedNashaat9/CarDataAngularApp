@@ -13,11 +13,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { AddformComponent } from './addform/addform.component';
 import { FormsModule } from '@angular/forms'; 
 import {Component} from '@angular/core';
+import { CartableComponent } from './cartable/cartable.component';
+import { PlateTableComponent } from './plate-table/plate-table.component';
+import { InsuranceContractComponent } from './insurance-contract/insurance-contract.component';
+import { AddInsuranceComponent } from './add-insurance/add-insurance.component';
+import { AddPlateComponent } from './add-plate/add-plate.component';
+import { ViewPlateComponent } from './view-plate/view-plate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddformComponent
+    AddformComponent,
+    CartableComponent,
+    PlateTableComponent,
+    InsuranceContractComponent,
+    AddInsuranceComponent,
+    AddPlateComponent,
+    ViewPlateComponent
   ],
   imports: [
     BrowserModule,

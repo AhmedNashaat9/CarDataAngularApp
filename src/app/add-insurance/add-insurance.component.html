@@ -1,0 +1,12 @@
+<form  #Insuranceform="ngForm" (ngSubmit)="OnInsuranceCreate(Insuranceform.value)">
+    <div class="form-group formposition">
+    <label >Insurancename</label>
+    <input  type="text" name="insuranceName"  class="form-control" placeholder="Frontplate:" ngModel>
+    <label>insuranceAmount</label>
+    <input  type="number" name="insuranceAmount"  class="form-control" placeholder="Rearplate:" ngModel>
+    <label>CarId</label>
+    <input  type="number" name="carId"  class="form-control" placeholder="CarId:" ngModel>
+    </div>
+    <input  type="submit" class="btn btn-primary formposition"  value=" Adddata" >
+
+  </form>

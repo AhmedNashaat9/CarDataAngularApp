@@ -1,0 +1,72 @@
+<table class="table tableposition">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">type</th>
+      <th scope="col">price</th>
+      <th scope="col">color</th>
+       
+    </tr>
+  </thead>
+    <tr *ngFor="let user of cardata$;let i=index">
+      <td>{{ user.id}}</td>
+      <td>{{ user.name}}</td>
+      <td>{{ user.type}}</td>
+      <td>{{ user.price}}</td>
+      <td>{{ user.color}}</td>
+      
+      <!--siko siko-->
+      <td><button mat-icon-button [matMenuTriggerFor]="mainMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #mainMenu="matMenu">
+        <button mat-menu-item (click)="onDeleteCar(user.id)" >delete</button>
+        <button mat-menu-item  (click)="onEditcar(user.id)">Edit</button>
+        <button mat-menu-item  (click)="ViewInsurance(user.id)">ViewInsuranceContract</button>
+  
+      </mat-menu>
+      </td>
+      
+  
+  
+  
+    </tr>
+  </table>
+        <button class="btn btn-primary buttonposition" (click)="addcar()" >Add New Car</button>
+        
+  
+  <!--<app-addform (form)="value($event)" ></app-addform>-->
+    
+   
+  
+  
+  <div class=" position example-container">
+    <form #carGetform="ngForm" (ngSubmit)="getById(carGetform.value.id)">
+    
+    <input  type="number" name="id" placeholder="pat@example.com" ngModel>
+    <input  type="submit" value="search">
+  </form>
+  <table class="table tableposition" *ngIf="getcar">
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">name</th>
+          <th scope="col">type</th>
+          <th scope="col">price</th>
+      
+        </tr>
+    </thead>
+
+    <tr>
+      <td>{{ getcar.id}}</td>
+      <td>{{ getcar.name}}</td>
+      <td>{{ getcar.type}}</td>
+      <td>{{ getcar.price}}</td>
+    </tr>
+  </table>
+  </div>
+  <app-view-plate [SentCarId]="SentCarId"></app-view-plate>
+  
+  
+  

@@ -1,0 +1,12 @@
+<form  #Plateform="ngForm" (ngSubmit)="OnPlateCreate(Plateform.value)">
+    <div class="form-group formposition">
+    <label >Frontplate</label>
+    <input  type="text" name="FrontPlate"  class="form-control" placeholder="Frontplate:" ngModel>
+    <label>Rearplate</label>
+    <input  type="text" name="RearPlate"  class="form-control" placeholder="Rearplate:" ngModel>
+    <label>CarId</label>
+    <input  type="number" name="CarId"  class="form-control" placeholder="CarId:" ngModel>
+    </div>
+    <input  type="submit" class="btn btn-primary formposition" click="addPlate()" value=" Adddata" >
+
+  </form>
